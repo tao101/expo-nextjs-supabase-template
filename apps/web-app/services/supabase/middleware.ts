@@ -47,6 +47,15 @@ export const updateSession = async (request: NextRequest) => {
       data: { user },
     } = await supabase.auth.getUser();
 
+    if (
+      request.nextUrl.pathname === "/reset-password/update-password" &&
+      !request.nextUrl.searchParams.get("code")
+    ) {
+      if (!user) {
+        return NextResponse.redirect(new URL("/", request.url));
+      }
+    }
+
     if (request.nextUrl.pathname.startsWith("/dashboard")) {
       if (!user) {
         return NextResponse.redirect(new URL("/", request.url));
@@ -56,7 +65,8 @@ export const updateSession = async (request: NextRequest) => {
     if (
       request.nextUrl.pathname.startsWith("/signin") ||
       request.nextUrl.pathname.startsWith("/signup") ||
-      request.nextUrl.pathname.startsWith("/reset-password")
+      (request.nextUrl.pathname.startsWith("/reset-password") &&
+        request.nextUrl.pathname !== "/reset-password/update-password")
     ) {
       if (user) {
         return NextResponse.redirect(new URL("/dashboard", request.url));
