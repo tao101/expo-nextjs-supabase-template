@@ -39,8 +39,10 @@ export default async function DashboardPage() {
           Sign Out
         </button>
       </form>
-      <div>
-        <pre>{JSON.stringify(user, null, 2)}</pre>
+      <div className="w-full max-w-7xl">
+        <pre className="whitespace-pre-wrap break-words">
+          {JSON.stringify(user, null, 2)}
+        </pre>
       </div>
     </div>
   );
