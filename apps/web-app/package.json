@@ -6,8 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "supabase:migrate": "supabase db push --db-url $SUPABASE_DB_URL"
+    "lint": "next lint"
   },
   "engines": {
     "node": "^20.0.0",
