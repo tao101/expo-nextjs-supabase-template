@@ -1,0 +1,27 @@
+{
+  "name": "company-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:web": "pnpm --filter web-app dev",
+    "dev:mobile": "pnpm --filter mobile-app start",
+    "build:web": "pnpm --filter web-app build",
+    "start:web": "pnpm --filter web-app start",
+    "build:mobile": "pnpm --filter mobile-app build",
+    "test": "pnpm --filter web-app test && pnpm --filter mobile-app test",
+    "clean": "rm -rf **/node_modules && rm -rf **/pnpm-lock.yaml && rm -rf **/.next && rm -rf **/.expo",
+    "supabase:start": "cd apps && supabase start",
+    "supabase:stop": "cd apps && supabase stop",
+    "supabase:reset": "cd apps && supabase db reset --local",
+    "supabase:migrate": "cd apps && supabase db push --local",
+    "supabase:migrate:pull": "cd apps && supabase db pull --local",
+    "supabase:genTypes": "cd apps && supabase gen types --lang typescript --local > ../shared/supabaseTypes.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

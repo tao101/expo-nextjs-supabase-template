@@ -1,0 +1,78 @@
+# Full-Stack Web & Mobile Template
+
+A Next.js, Expo, and Supabase template for building full-stack web and mobile applications.
+
+## Tech Stack
+
+- Next.js 15 (Web + API Routes)
+- Expo (Mobile)
+- Supabase (Auth, Storage, Realtime)
+- Legend State (State Management)
+- shadcn/ui (Web UI)
+- Tamagui (Mobile UI)
+- PNPM (Package Management)
+
+## Key Directories
+
+apps/web-app/ - Next.js web application and API routes - Uses shadcn/ui components - Legend State for state management - Supabase integration for auth/storage
+
+apps/mobile-app/ - Expo mobile application - Tamagui UI components - Legend State for state management - Supabase mobile integration
+
+apps/supabase/ - Supabase configuration - Database migrations - Edge functions - Storage buckets setup
+
+shared/ - Shared utilities - Common types - Shared business logic
+
+## File Patterns
+
+- \*_/_.tsx = React components
+- \*_/_.ts = TypeScript utilities
+- \*_/api/_.ts = API route handlers
+- \*_/components/_.tsx = UI components
+- \*_/hooks/_.ts = Custom React hooks
+- \*_/services/_.ts = Service layer (API clients, etc)
+- \*_/types/_.ts = TypeScript type definitions
+- \*_/utils/_.ts = Utility functions
+- \*_/store/_.ts = Legend State stores
+- \*_/_.test.ts = Test files
+- \*_/migrations/_.sql = Database migrations
+
+## Key Files
+
+apps/web-app/
+app/
+(auth)/ = Authentication routes
+(dashboard)/ = Dashboard routes
+api/ = API routes
+layout.tsx = Root layout
+page.tsx = Home page
+
+apps/mobile-app/
+app/
+(auth)/ = Auth screens  
+ (tabs)/ = Main tab navigation
+\_layout.tsx = Root layout
+
+shared/
+types/
+index.ts = Shared type definitions
+utils/
+index.ts = Shared utilities
+store/
+index.ts = Shared state management
+
+## Important Paths
+
+- Web Routes = apps/web-app/app/\*\*
+- API Routes = apps/web-app/app/api/\*\*
+- Mobile Screens = apps/mobile-app/app/\*\*
+- Shared Code = shared/\*\*
+- Database = apps/supabase/migrations/\*\*
+- Components = apps/(web|mobile)-app/components/\*\*
+
+## Notes
+
+- Use Next.js API routes for backend functionality
+- Share business logic and types via shared/ directory
+- Keep UI components separate between web/mobile
+- Use Legend State for cross-platform state management
+- Leverage Supabase for auth, storage and realtime features

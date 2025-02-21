@@ -1,0 +1,9 @@
+**/node_modules
+**/.next
+**/dist
+**/.turbo
+**/.cache
+**/build
+**/.env*
+.git
+apps/mobile-app
